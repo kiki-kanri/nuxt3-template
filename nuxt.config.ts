@@ -20,6 +20,7 @@ export default defineNuxtConfig({
 		}
 	},
 	css: [
+		'element-plus/dist/index.css'
 	],
 	imports: {
 		dirs: [
@@ -35,6 +36,7 @@ export default defineNuxtConfig({
 		enabled: true,
 		safelist: {
 			deep: [
+				/el-/
 			],
 			standard: [
 			]

@@ -1,5 +1,7 @@
 <template>
 	<div>
-		<p>Hello, World!</p>
+		<el-card>
+			<p>Element-plus card.</p>
+		</el-card>
 	</div>
 </template>
