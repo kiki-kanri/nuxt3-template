@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@averjs/nuxt-compression": "^1.2.2",
+    "@vueuse/nuxt": "^9.13.0",
+    "nuxt": "^3.2.3",
+    "nuxt-purgecss": "^2.0.0",
+    "sass": "^1.58.3",
+    "vite-plugin-remove-console": "^2.1.0"
+  }
+}
