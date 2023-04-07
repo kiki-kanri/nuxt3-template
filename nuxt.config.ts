@@ -39,6 +39,7 @@ export default defineNuxtConfig({
 			]
 		}
 	},
+	ssr: false,
 	vite: {
 		build: {
 			chunkSizeWarningLimit: 1024,
