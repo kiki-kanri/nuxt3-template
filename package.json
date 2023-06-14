@@ -9,10 +9,10 @@
   },
   "devDependencies": {
     "@averjs/nuxt-compression": "^1.2.2",
-    "@vueuse/nuxt": "^9.13.0",
-    "nuxt": "^3.2.3",
+    "@vueuse/nuxt": "^10.1.2",
+    "nuxt": "^3.5.3",
     "nuxt-purgecss": "^2.0.0",
-    "sass": "^1.58.3",
-    "vite-plugin-remove-console": "^2.1.0"
+    "sass": "^1.63.4",
+    "vite-plugin-remove-console": "^2.1.1"
   }
 }
