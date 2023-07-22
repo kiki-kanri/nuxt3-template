@@ -17,9 +17,17 @@ npm install
 pnpm install
 ```
 
+## Env config
+Copy example env file to .env and edit it.
+
+```bash
+cp .env.example .env
+vim .env
+```
+
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on http://localhost:SERVER_PORT (.env)
 
 ```bash
 npm run dev

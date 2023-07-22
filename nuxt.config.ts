@@ -42,9 +42,7 @@ export default defineNuxtConfig({
 	ssr: false,
 	vite: {
 		build: {
-			chunkSizeWarningLimit: 1024,
-			manifest: false,
-			ssr: false
+			chunkSizeWarningLimit: 1024
 		},
 		plugins: [
 			removeConsole()
