@@ -15,20 +15,19 @@ export default defineNuxtConfig({
 		},
 		keepalive: true
 	},
-	compression: {
-		viteCompression: {
-			algorithm: 'gzip',
-			threshold: 513
-		}
-	},
 	experimental: {
 		payloadExtraction: false
 	},
 	modules: [
-		'@averjs/nuxt-compression',
 		'@vueuse/nuxt',
 		'nuxt-purgecss'
 	],
+	nitro: {
+		compressPublicAssets: {
+			brotli: true,
+			gzip: true
+		}
+	},
 	purgecss: {
 		enabled: true,
 		safelist: {
