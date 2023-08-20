@@ -18,6 +18,7 @@ pnpm install
 ```
 
 ## Env config
+
 Copy example env file to .env and edit it.
 
 ```bash

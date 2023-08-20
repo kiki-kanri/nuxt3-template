@@ -11,7 +11,7 @@
     "@vueuse/nuxt": "^10.3.0",
     "nuxt": "^3.6.5",
     "nuxt-purgecss": "^2.0.0",
-    "sass": "^1.64.2",
+    "sass": "^1.66.1",
     "vite-plugin-remove-console": "^2.1.1"
   }
 }
