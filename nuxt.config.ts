@@ -38,6 +38,16 @@ export default defineNuxtConfig({
 		}
 	},
 	ssr: false,
+	typescript: {
+		tsConfig: {
+			compilerOptions: {
+				noImplicitOverride: true,
+				noUnusedLocals: true,
+				noUnusedParameters: true
+			}
+		},
+		typeCheck: true
+	},
 	vite: {
 		build: {
 			chunkSizeWarningLimit: 1024
