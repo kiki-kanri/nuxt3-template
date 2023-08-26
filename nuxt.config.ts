@@ -42,6 +42,7 @@ export default defineNuxtConfig({
 		tsConfig: {
 			compilerOptions: {
 				noImplicitOverride: true,
+				noUncheckedIndexedAccess: true,
 				noUnusedLocals: true,
 				noUnusedParameters: true
 			}
