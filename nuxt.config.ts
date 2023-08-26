@@ -22,10 +22,7 @@ export default defineNuxtConfig({
 		'nuxt-purgecss'
 	],
 	nitro: {
-		compressPublicAssets: {
-			brotli: true,
-			gzip: true
-		}
+		compressPublicAssets: true
 	},
 	purgecss: {
 		enabled: true,
