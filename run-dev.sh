@@ -2,4 +2,4 @@
 
 . ./.env
 
-npx nuxt dev --host=localhost --port=$SERVER_PORT
+npx nuxt dev --host=$SERVER_HOST --port=$SERVER_PORT
