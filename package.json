@@ -8,8 +8,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@vueuse/nuxt": "^10.3.0",
-    "nuxt": "^3.6.5",
+    "@vueuse/nuxt": "^10.4.0",
+    "nuxt": "^3.7.0",
     "nuxt-purgecss": "^2.0.0",
     "sass": "^1.66.1",
     "vite-plugin-remove-console": "^2.1.1",
