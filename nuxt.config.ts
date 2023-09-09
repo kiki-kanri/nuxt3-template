@@ -14,6 +14,10 @@ export default defineNuxtConfig({
 		},
 		keepalive: true
 	},
+	devServer: {
+		host: process.env.SERVER_HOST,
+		port: Number(process.env.SERVER_PORT) || undefined
+	},
 	experimental: {
 		payloadExtraction: false
 	},
