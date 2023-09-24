@@ -22,6 +22,7 @@ export default defineNuxtConfig({
 		payloadExtraction: false
 	},
 	modules: [
+		'@nuxtjs/tailwindcss',
 		'@vueuse/nuxt',
 		'nuxt-purgecss'
 	],
@@ -39,6 +40,7 @@ export default defineNuxtConfig({
 		}
 	},
 	ssr: false,
+	tailwindcss: {},
 	typescript: {
 		tsConfig: {
 			compilerOptions: {
