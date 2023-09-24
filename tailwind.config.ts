@@ -1,7 +1,7 @@
 import { Config } from 'tailwindcss';
 
-export default <Config>{
+export default {
 	content: [],
 	plugins: [],
 	theme: {}
-}
+} satisfies Config;
