@@ -38,14 +38,11 @@ vim .env
 ```
 
 ### Fields
-- `HMR_CLIENT_PORT` - Set the port that hmr ws connects to on the client side, usually set when using a proxy server such as nginx.
-- `HMR_PATH` - Set the path for hmr ws to connect to on the client side, usually set when using a proxy server such as nginx, **note that the actual connection path will be prefixed with /_nuxt**.
-- `HMR_PORT` - Setting the port of the hmr ws server.
-- `HMR_PROTOCOL` - Set the protocol (ws/wss) that hmr ws will use for the client connection, usually set when using a proxy server such as nginx.
 - `SERVER_HOST` - Development server host.
 - `SERVER_PORT` - Development server port.
 
 ## Modules
+- [@nuxt/devtools](https://devtools.nuxt.com/) - Nuxt DevTools. Default is enabled.
 - [@nuxtjs/tailwindcss](https://tailwindcss.nuxtjs.org) - Nuxt tailwindcss module.
 - [@vueuse/nuxt](https://vueuse.org/nuxt/README.html) - An add-on of VueUse, which provides better Nuxt integration auto-import capabilities.
 - [nuxt-purgecss](https://nuxt.com/modules/purgecss) - Drop superfluous CSS!
@@ -64,13 +61,7 @@ pnpm dev    #pnpm
 
 ### Local
 
-1. Remove or comment out these env fields:
-  - `HMR_CLIENT_PORT`
-  - `HMR_PATH`
-  - `HMR_PORT`
-  - `HMR_PROTOCOL`
-
-2. Start the development server on `http://localhost:SERVER_PORT`, default is `http://localhost:3000`.
+Start the development server on `http://localhost:SERVER_PORT`, default is `http://localhost:3000`.
 
 ### With nginx
 
@@ -83,8 +74,8 @@ server {
 
   # Load your ssl configuration or setup certificate
 
-  # Nuxt hmr
-  location /_nuxt/HMR_PATH { # Replace HMR_PATH with .env field value
+  # Dev server
+  location / {
     proxy_buffering off;
     proxy_http_version 1.1;
     proxy_redirect off;
@@ -96,24 +87,10 @@ server {
     proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header Upgrade $http_upgrade;
-    proxy_pass http://SERVER_HOST:HMR_PORT; # Replace SERVER_HOST and HMR_PORT with .env field value
-  }
-
-  # Dev server
-  location / {
-    proxy_redirect off;
-    proxy_set_header Host $host;
-    proxy_set_header REMOTE_ADDR $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header X-Real-IP $remote_addr;
     proxy_pass http://SERVER_HOST:SERVER_PORT; # Replace SERVER_HOST and SERVER_PORT with .env field value
   }
 }
 ```
-
-Why don't you just expose the port of the server and hmr and link it from an external network?
-  - To avoid CORS problems.
 
 ## Production
 
