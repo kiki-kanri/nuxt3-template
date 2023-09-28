@@ -18,6 +18,9 @@ export default defineNuxtConfig({
 		host: process.env.SERVER_HOST,
 		port: Number(process.env.SERVER_PORT) || undefined
 	},
+	devtools: {
+		enabled: true
+	},
 	experimental: {
 		payloadExtraction: false
 	},
