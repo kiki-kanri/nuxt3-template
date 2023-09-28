@@ -72,6 +72,12 @@ server {
   listen 443 http2 ssl;
   server_name SERVER_NAME; # Replace SERVER_NAME with your real domain
 
+  # Headers
+
+  # Allow devtools, if you don't want to use nuxt-devtools, remove or set the value to DENY.
+  add_header X-Frame-Options "SAMEORIGIN" always;
+
+  # SSL
   # Load your ssl configuration or setup certificate
 
   # Dev server
