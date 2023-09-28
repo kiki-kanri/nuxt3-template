@@ -58,14 +58,6 @@ export default defineNuxtConfig({
 		},
 		plugins: [
 			removeConsole()
-		],
-		server: {
-			hmr: {
-				clientPort: Number(process.env.HMR_CLIENT_PORT) || undefined,
-				path: process.env.HMR_PATH,
-				port: Number(process.env.HMR_PORT) || undefined,
-				protocol: process.env.HMR_PROTOCOL
-			}
-		}
+		]
 	}
 });
