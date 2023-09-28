@@ -35,7 +35,9 @@ export default defineNuxtConfig({
 	purgecss: {
 		enabled: true,
 		safelist: {
-			deep: [],
+			deep: [
+				/nuxt-devtools/
+			],
 			standard: [
 				'body',
 				'html'
