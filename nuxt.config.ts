@@ -15,8 +15,8 @@ export default defineNuxtConfig({
 		keepalive: true
 	},
 	devServer: {
-		host: process.env.SERVER_HOST,
-		port: Number(process.env.SERVER_PORT) || undefined
+		host: process.env.DEV_SERVER_HOST,
+		port: Number(process.env.DEV_SERVER_PORT) || undefined
 	},
 	devtools: {
 		enabled: true
