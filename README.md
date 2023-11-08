@@ -1,6 +1,6 @@
 # Base nuxt3 template
 
-This is a basic nuxt3 template with some modules and plugins.
+This is a basic nuxt3 template with some modules and packages installed and common settings used.
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -11,8 +11,8 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
   - [Setup](#setup)
   - [Env config](#env-config)
     - [Fields](#fields)
-  - [Modules](#modules)
-  - [Plugins](#plugins)
+  - [Installed modules](#installed-modules)
+  - [Vite plugins](#vite-plugins)
   - [Development Server](#development-server)
     - [Local](#local)
     - [With nginx](#with-nginx)
@@ -23,31 +23,29 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 Make sure to install the dependencies:
 
 ```bash
-npm install  # npm
-pnpm install # pnpm
-yarn install # yarn
+npm i  # npm
+pnpm i # pnpm
 ```
 
 ## Env config
 
-Copy `.env.example` to `.env` and edit it.
+Copy `.env.development` to `.env.development.local` and edit it.
 
 ```bash
-cp .env.example .env
-vim .env
+cp .env.development .env.development.local
+vim .env.development.local
 ```
 
 ### Fields
-- `SERVER_HOST` - Development server host.
-- `SERVER_PORT` - Development server port.
+- `DEV_SERVER_HOST` - Development server host.
+- `DEV_SERVER_PORT` - Development server port.
 
-## Modules
-- [@nuxt/devtools](https://devtools.nuxt.com/) - Nuxt DevTools. Default is enabled.
+## Installed modules
 - [@nuxtjs/tailwindcss](https://tailwindcss.nuxtjs.org) - Nuxt tailwindcss module.
 - [@vueuse/nuxt](https://vueuse.org/nuxt/README.html) - An add-on of VueUse, which provides better Nuxt integration auto-import capabilities.
 - [nuxt-purgecss](https://nuxt.com/modules/purgecss) - Drop superfluous CSS!
 
-## Plugins
+## Vite plugins
 - [vite-plugin-remove-console](https://www.npmjs.com/package/vite-plugin-remove-console) - A vite plugin that remove all the specified console types in the production environment.
 
 ## Development Server
@@ -55,13 +53,13 @@ vim .env
 Start the development command is:
 
 ```bash
-npm run dev #npm
-pnpm dev    #pnpm
+npm run dev   #npm
+pnpm run dev  #pnpm
 ```
 
 ### Local
 
-Start the development server on `http://localhost:SERVER_PORT`, default is `http://localhost:3000`.
+Start the development server on `http://DEV_SERVER_HOST:DEV_SERVER_PORT`, default is `http://localhost:3000`.
 
 ### With nginx
 
@@ -70,15 +68,15 @@ This is a basic nginx configuration with ssl for a development server:
 ```nginx
 server {
   listen 443 http2 ssl;
-  server_name SERVER_NAME; # Replace SERVER_NAME with your real domain
+  server_name SERVER_NAME; # Replace SERVER_NAME with your real domain.
 
   # Headers
 
-  # Allow devtools, if you don't want to use nuxt-devtools, remove or set the value to DENY.
-  add_header X-Frame-Options "SAMEORIGIN" always;
+  # If you want to use nuxt-devtools, set the value to SAMEORIGIN.
+  add_header X-Frame-Options "DENY" always;
 
   # SSL
-  # Load your ssl configuration or setup certificate
+  # Load your ssl configuration or setup certificate.
 
   # Dev server
   location / {
@@ -93,7 +91,7 @@ server {
     proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header Upgrade $http_upgrade;
-    proxy_pass http://SERVER_HOST:SERVER_PORT; # Replace SERVER_HOST and SERVER_PORT with .env field value
+    proxy_pass http://DEV_SERVER_HOST:DEV_SERVER_PORT; # Replace SERVER_HOST and SERVER_PORT with .env.development.local field value.
   }
 }
 ```
