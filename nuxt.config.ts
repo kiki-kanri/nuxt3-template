@@ -19,10 +19,11 @@ export default defineNuxtConfig({
 		port: Number(process.env.DEV_SERVER_PORT) || undefined
 	},
 	devtools: {
-		enabled: true
+		enabled: false
 	},
 	experimental: {
-		payloadExtraction: false
+		headNext: true,
+		inlineSSRStyles: false
 	},
 	modules: [
 		'@nuxtjs/tailwindcss',
@@ -35,16 +36,14 @@ export default defineNuxtConfig({
 	purgecss: {
 		enabled: true,
 		safelist: {
-			deep: [
-				/nuxt-devtools/
-			],
+			deep: [/-(enter|leave)-active/],
 			standard: [
 				'body',
 				'html'
 			]
 		}
 	},
-	ssr: false,
+	ssr: true,
 	tailwindcss: {},
 	typescript: {
 		tsConfig: {
@@ -58,9 +57,6 @@ export default defineNuxtConfig({
 		typeCheck: true
 	},
 	vite: {
-		build: {
-			chunkSizeWarningLimit: 1024
-		},
 		plugins: [
 			removeConsole()
 		]
