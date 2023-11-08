@@ -25,6 +25,11 @@ export default defineNuxtConfig({
 		headNext: true,
 		inlineSSRStyles: false
 	},
+	imports: {
+		dirs: [
+			'./composables/**/*.ts'
+		]
+	},
 	modules: [
 		'@nuxtjs/tailwindcss',
 		'@vueuse/nuxt',
