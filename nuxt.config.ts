@@ -31,7 +31,7 @@ export default defineNuxtConfig({
 		]
 	},
 	modules: [
-		'@nuxtjs/tailwindcss',
+		'@unocss/nuxt',
 		'@vueuse/nuxt',
 		'nuxt-purgecss'
 	],
@@ -41,7 +41,12 @@ export default defineNuxtConfig({
 	purgecss: {
 		enabled: true,
 		safelist: {
-			deep: [/-(enter|leave)-active/],
+			deep: [
+				/-(enter|leave)-active/,
+				/--unocss--/g,
+				/-\[\S+\]/,
+				/__uno_hash_(\w{6})/
+			],
 			standard: [
 				'body',
 				'html'
@@ -49,7 +54,6 @@ export default defineNuxtConfig({
 		}
 	},
 	ssr: true,
-	tailwindcss: {},
 	typescript: {
 		tsConfig: {
 			compilerOptions: {
