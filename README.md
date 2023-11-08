@@ -41,7 +41,7 @@ vim .env.development.local
 - `DEV_SERVER_PORT` - Development server port.
 
 ## Installed modules
-- [@nuxtjs/tailwindcss](https://tailwindcss.nuxtjs.org) - Nuxt tailwindcss module.
+- [@unocss/nuxt](https://unocss.dev/integrations/nuxt) - The Nuxt module for UnoCSS.
 - [@vueuse/nuxt](https://vueuse.org/nuxt/README.html) - An add-on of VueUse, which provides better Nuxt integration auto-import capabilities.
 - [nuxt-purgecss](https://nuxt.com/modules/purgecss) - Drop superfluous CSS!
 
