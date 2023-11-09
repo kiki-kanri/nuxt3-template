@@ -4,8 +4,8 @@
     "build": "nuxt build --dotenv ./.env.production.local",
     "dev": "nuxt dev --dotenv ./.env.development.local",
     "generate": "nuxt generate --dotenv ./.env.production.local",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "@kikiutils/types": "^1.0.1",
