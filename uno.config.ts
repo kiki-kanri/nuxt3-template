@@ -2,28 +2,9 @@ import { defineConfig } from 'unocss';
 
 export default defineConfig({
 	rules: [
-		[
-			/^bg-color-([a-z\d]+)$/,
-			([
-				_,
-				value
-			]) => ({ 'background-color': `#${value}` })
-		],
-		[
-			/^color-([a-z\d]+)$/,
-			([
-				_,
-				value
-			]) => ({ color: `#${value}` })
-		],
-		[
-			/^fs-(\d+px)$/,
-			([
-				_,
-				value
-			]) => ({ 'font-size': value })
-		]
-
+		[/^bg-color-([a-z\d]+)$/, ([_, value]) => ({ 'background-color': `#${value}` })],
+		[/^color-([a-z\d]+)$/, ([_, value]) => ({ color: `#${value}` })],
+		[/^fs-(\d+px)$/, ([_, value]) => ({ 'font-size': value })]
 	],
 	shortcuts: {
 		'flex-middle': 'flex items-center justify-center',
