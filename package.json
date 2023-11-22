@@ -9,9 +9,9 @@
   },
   "devDependencies": {
     "@kikiutils/types": "^1.0.1",
-    "@unocss/nuxt": "^0.57.3",
-    "@vueuse/nuxt": "^10.6.0",
-    "nuxt": "^3.8.1",
+    "@unocss/nuxt": "^0.57.7",
+    "@vueuse/nuxt": "^10.6.1",
+    "nuxt": "^3.8.2",
     "nuxt-purgecss": "^2.0.0",
     "sass": "^1.69.5",
     "vite-plugin-remove-console": "^2.1.1",
