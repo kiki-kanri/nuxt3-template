@@ -31,10 +31,20 @@ export default defineNuxtConfig({
 	purgecss: {
 		enabled: true,
 		safelist: {
-			deep: [/-(enter|leave)-active/],
+			deep: [],
 			standard: [
+				/-(appear|enter|leave)(|-(active|from|to))$/,
+				/-\[\S+\]/,
+				/.*data-v-.*/,
+				/:deep/,
+				/:global/,
+				/:slotted/,
+				/^(?!cursor-move).+-move$/,
+				/^nuxt-link(|-exact)-active$/,
+				'__nuxt',
 				'body',
-				'html'
+				'html',
+				'nuxt-progress'
 			]
 		}
 	},
