@@ -31,13 +31,23 @@ export default defineNuxtConfig({
 	purgecss: {
 		enabled: true,
 		safelist: {
-			deep: [
-				/-(enter|leave)-active/,
-				/--unocss--/g,
+			deep: [],
+			standard: [
+				/-(appear|enter|leave)(|-(active|from|to))$/,
+				/--unocss--/,
 				/-\[\S+\]/,
-				/__uno_hash_(\w{6})/
-			],
-			standard: ['body', 'html']
+				/.*data-v-.*/,
+				/:deep/,
+				/:global/,
+				/:slotted/,
+				/^(?!cursor-move).+-move$/,
+				/^nuxt-link(|-exact)-active$/,
+				/__uno_hash_(\w{6})/,
+				'__nuxt',
+				'body',
+				'html',
+				'nuxt-progress'
+			]
 		}
 	},
 	ssr: true,
