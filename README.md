@@ -1,12 +1,14 @@
-# Base nuxt3 template
+# Base nuxt3 template with modules and options
 
 This is a basic nuxt3 template with some modules and packages installed and common settings used.
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+Documentation will be improved in future releases.
+
 ## Table of contents
 
-- [Base nuxt3 template](#base-nuxt3-template)
+- [Base nuxt3 template with modules and options](#base-nuxt3-template-with-modules-and-options)
   - [Table of contents](#table-of-contents)
   - [Setup](#setup)
   - [Env config](#env-config)
