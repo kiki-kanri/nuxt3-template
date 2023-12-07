@@ -5,6 +5,7 @@ FROM kikikanri/node21:base-alpine as build-stage
 
 ## Set env and workdir
 ENV NITRO_PRESET=node_cluster
+ENV NPMRC_NODE_LINKER=hoisted
 WORKDIR /app
 
 ## Install packages
